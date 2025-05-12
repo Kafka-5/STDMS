@@ -71,8 +71,19 @@ This is a Django-based web application designed to manage student records, atten
     ```bash
     python manage.py runsslserver --certificate certs/cert.pem --key certs/key.pem 127.0.0.1:8000
     ```
-
+Screenshots shows the description about Login Page , Dashboard  and functionality of Admin , Student and Teacher! 
 ---
+![Screenshot 2025-05-05 160030](https://github.com/user-attachments/assets/5e7d8462-72a9-4b1b-b9eb-f6804bb5587f)
+![Screenshot 2025-05-05 151717](https://github.com/user-attachments/assets/b648c696-00f1-4a8c-99d0-c4aadf1886a0)
+![Screenshot 2025-05-05 151702](https://github.com/user-attachments/assets/72fa6363-9375-4e06-a735-201a4ad85230)
+![Screenshot 2025-05-05 151643](https://github.com/user-attachments/assets/adb74da5-a9e6-4ce9-884c-a791165c960f)
+![Screenshot 2025-05-05 151608](https://github.com/user-attachments/assets/9cb507eb-7af9-42e0-a9f1-b91971fb2b7f)
+![Screenshot 2025-05-05 151521](https://github.com/user-attachments/assets/f9aef994-351b-4385-8cd4-145d3a560428)
+![Screenshot 2025-05-05 151446](https://github.com/user-attachments/assets/76469922-a8c9-421b-8175-25e3bb1d3621)
+![Screenshot 2025-05-05 151410](https://github.com/user-attachments/assets/3ce6c44c-6784-4f6f-80ca-4ff86110ba9b)
+![Screenshot 2025-05-05 150704](https://github.com/user-attachments/assets/9cd52e75-4760-4d9f-b828-e2a8b2c447b4)
+![Screenshot 2025-05-05 150238](https://github.com/user-attachments/assets/8dd90a70-4e46-4f35-aa00-01f23646a23c)
+
 
 
 
