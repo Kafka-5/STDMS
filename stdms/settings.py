@@ -192,9 +192,8 @@ SESSION_COOKIE_SECURE = True
 
 
 
-# pass -> noni@1234
 # https thing openssl req -x509 -newkey rsa:4096 -nodes -out certs/cert.pem -keyout certs/key.pem -days 365
-# python manage.py runsslserver --certificate certs/cert.pem --key certs/key.pem 192.168.43.124:8000
+# python manage.py runsslserver --certificate certs/cert.pem --key certs/key.pem 192.0.0.XXX:8000
 #celery -A stdms worker --loglevel=info
 # celery -A stdms worker -l info --> start worker
 #celery -A stdms worker -l info --pool=solo
