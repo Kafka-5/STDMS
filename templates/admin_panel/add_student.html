@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Student{% endblock %}
+
+{% block content %}
+<style>
+    .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+    }
+
+    .card-header {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-success {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-success:hover {
+        background-color: #218838;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .form-row .form-group {
+        width: 48%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Add New Student</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                {{ user_form.username }}
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                {{ user_form.password }}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                {{ user_form.first_name }}
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                {{ user_form.last_name }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            {{ student_form.branch }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            {{ student_form.semester }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="roll_number">Roll Number</label>
+                            {{ student_form.roll_number }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            {{ student_form.phone }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjects">Subjects</label>
+                            {{ student_form.subjects }}
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-success">Add Student</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Student Management System{% endblock %}</title>
+    {% load static %}
+    
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Metallic Theme -->
+    <style>
+        :root {
+            --metallic-dark: #000000;
+            --metallic-card: #9f9e9e;
+            --metallic-accent: #696767;
+            --text-light: #f1f1f1;
+            --primary: #007bff;
+            --success: #28a745;
+            --danger: #dc3545;
+            --border-color: #b8b8b8;
+            --hover-shadow: rgba(13, 13, 14, 0.3);
+        }
+
+        body {
+            background-color: var(--metallic-dark);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(145deg, #0c0c0c, #1a1a1a);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            padding: 0.75rem 1rem;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-light) !important;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand i {
+            margin-right: 0.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 400;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .navbar-toggler {
+            border-color: var(--border-color);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--metallic-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 102, 102, 0.4);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, #3a3a3a, #1a1a1a);
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn-metallic {
+            background-color: var(--metallic-accent);
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-metallic:hover {
+            background-color: #020202;
+            color: var(--text-light);
+            box-shadow: 0 4px 10px var(--hover-shadow);
+        }
+
+        /* Forms */
+        .form-control, .form-select {
+            background-color: #3f3f3f;
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .form-control:focus {
+            background-color: #dcd4d4;
+            color: var(--text-light);
+            border-color: var(--primary);
+            box-shadow: 0 0 5px var(--hover-shadow);
+        }
+
+        .form-control::placeholder {
+            color: #000000;
+        }
+
+        /* Alerts */
+        .alert {
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .alert-dismissible .btn-close {
+            filter: invert(1);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(145deg, #3d3c3c, #474646);
+            color: var(--text-light);
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #011e3e;
+            text-decoration: underline;
+        }
+
+        /* Container */
+        .main-content {
+            min-height: calc(100vh - 200px);
+            padding: 2rem 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem;
+            }
+
+            .card {
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% if user.is_authenticated %}{% if user.groups.all.0.name == 'Admin' %}{% url 'admin_dashboard' %}{% elif user.groups.all.0.name == 'Teacher' %}{% url 'teacher_dashboard' %}{% else %}{% url 'student_dashboard' %}{% endif %}{% else %}{% url 'student_login' %}{% endif %}">
+                <i class="fas fa-graduation-cap"></i> SMS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'success' %}success{% else %}{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© {% now "Y" %} Student Management System. All rights reserved.</p>
+            <p>Developed by <a href="https://www.linkedin.com/in/ashish-wadhwa-36258b27a/Ashish wadhwa/"">Ashish wadhwa</a> | <a href="{% url 'contact_us' %}">Contact Us</a></p>
+        </div>
+    </footer>
+</body>
+</html>

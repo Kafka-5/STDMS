@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* Background and logo */
+    body {
+        background: linear-gradient(145deg, #020202, #323232);
+    }
+
+    .logo {
+        width: 100px;
+        height: auto;
+        margin-bottom: 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .btn-metallic {
+        background: #ffffffaf;
+        color: #043e36;
+        border: 1px solid #666;
+        transition: all 0.3s ease;
+    }
+
+    .btn-metallic:hover {
+        background: #555;
+        color: #ffffff;
+        box-shadow: 0 0 10px #00f7ff7c;
+        transform: scale(1.02);
+    }
+</style>
+
+<div class="container text-center mt-5 fade-in">
+    <!-- Logo -->
+    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Logo" class="logo">
+
+    <h1 class="display-5 fw-bold text-mute mb-3">Welcome to Student Management System</h1>
+    <p class="lead text-mute mb-5">Please select your role to log in</p>
+
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{% url 'student_login' %}" class="btn btn-metallic btn-lg">Student</a>
+        <a href="{% url 'teacher_login' %}" class="btn btn-metallic btn-lg">Teacher</a>
+        <a href="{% url 'admin_login' %}" class="btn btn-metallic btn-lg">Admin</a>
+    </div>
+</div>
+{% endblock %}

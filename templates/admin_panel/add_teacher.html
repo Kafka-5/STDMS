@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Teacher{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Add New Teacher</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <h4>Account Details</h4>
+        {{ user_form.as_p }}
+
+        <h4>Profile Details</h4>
+        {{ teacher_form.as_p }}
+
+        <button type="submit" class="btn btn-success">Add Teacher</button>
+    </form>
+</div>
+{% endblock %}

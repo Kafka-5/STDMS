@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="text-center mb-4">
+        <h2>🛠️ Welcome, {{ request.user.first_name }} (Admin)</h2>
+    </div>
+
+    <div class="row g-4">
+        <!-- Total Students Card -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👨‍🎓 Students</h5>
+                    <p class="card-text">{{ total_students }} registered students</p>
+                    <a href="{% url 'manage_students' %}" class="btn btn-primary">Manage Students</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Teachers Card -->
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">👩‍🏫 Teachers</h5>
+                    <p class="card-text">{{ total_teachers }} registered teachers</p>
+                    <a href="{% url 'manage_teachers' %}" class="btn btn-primary">Manage Teachers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{% url 'upload_csv_center' %}" class="btn btn-success">Upload CSV (Student/Teacher/Marks)</a>
+        <br>
+        <br>
+        <br>
+        <a href="{% url 'admin_logout' %}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+{% endblock %}
