@@ -74,5 +74,5 @@ This is a Django-based web application designed to manage student records, atten
 
 ---
 
-## 📂 Project Structure
+
 
