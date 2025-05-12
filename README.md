@@ -1,3 +1,4 @@
+![Screenshot 2025-05-12 230326](https://github.com/user-attachments/assets/9913b133-f70a-4340-b651-178fca5c2b39)
 # Student Management System (STDMS) 🏫
 
 This is a Django-based web application designed to manage student records, attendance, marks, assignments, and announcements in an educational institution.
@@ -82,6 +83,7 @@ Screenshots shows the description about Login Page , Dashboard  and functionalit
 ![Screenshot 2025-05-05 151446](https://github.com/user-attachments/assets/76469922-a8c9-421b-8175-25e3bb1d3621)
 ![Screenshot 2025-05-05 151410](https://github.com/user-attachments/assets/3ce6c44c-6784-4f6f-80ca-4ff86110ba9b)
 ![Screenshot 2025-05-05 150704](https://github.com/user-attachments/assets/9cd52e75-4760-4d9f-b828-e2a8b2c447b4)
+VIsual representation of Attendance 
 ![Screenshot 2025-05-05 150238](https://github.com/user-attachments/assets/8dd90a70-4e46-4f35-aa00-01f23646a23c)
 
 
