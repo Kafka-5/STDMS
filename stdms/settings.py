@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-5%-(cz@q5_vz&=g(0h-g)eui1j*n++)nlg4*8lk0vit4#d!1g4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.0.100','192.168.43.124']
-CSRF_TRUSTED_ORIGINS = ['https://192.168.43.124:8000']
+ALLOWED_HOSTS = ['localhost']
+CSRF_TRUSTED_ORIGINS = ['https://192.XXX.XXX.XXX]
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -107,7 +107,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.mysql' if using mysqlclient
         'NAME': 'student_management_system',                    # Your MySQL database name
         'USER': 'root',                        # Your MySQL username
-        'PASSWORD': '69@Node*head',     # Your MySQL password
+        'PASSWORD': '******',     # Your MySQL password
         'HOST': 'localhost',                   # Or '127.0.0.1'
         'PORT': '3306',                         # Default MySQL port
         'OPTIONS': {
